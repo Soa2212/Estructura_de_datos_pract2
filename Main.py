@@ -31,7 +31,7 @@ class Main:
                 print("Saliendo del programa.")
                 break
             else:
-                print("Opción no válida. Por favor, seleccione una opción válida.")
+                print("Opción no válida. Por favor, vuelva y seleccione una opción válida.")
 
 if __name__ == "__main__":
     main = Main()
