@@ -11,6 +11,7 @@ class Main:
             print("2. Eliminar elemento")
             print("3. Modificar elemento")
             print("4. Mostrar arreglo")
+            print("5. Creditos")
             print("5. Salir")
             opcion = input("Selecciona una opción: ")
 
@@ -28,6 +29,10 @@ class Main:
                 print("Contenido del arreglo:")
                 self.mi_arreglo.mostrar()
             elif opcion == "5":
+                print("Alfredo Cholico -- 22170184")
+                print("Omar Alejandro Gonzales Sandoval -- 22170116")
+                print("Jose Angel Gabriel Tovar Uribe -- 22170097")
+            elif opcion == "6":
                 print("Saliendo del programa.")
                 break
             else:
