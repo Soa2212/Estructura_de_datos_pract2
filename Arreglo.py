@@ -7,7 +7,7 @@ class Arreglo:
     def Buscar_Ordenado(self, elemento):
         self.N += 1
         index = self.N
-        while index > 0 and elemento < self.A[index - 1]:
+        while index > 0 and elemento.lower() < self.A[index - 1].lower():
             self.A[index] = self.A[index - 1]
             index -= 1
         self.A[index] = elemento
@@ -17,7 +17,6 @@ class Arreglo:
             print("El arreglo está lleno")
         else:
             self.Buscar_Ordenado(elemento)
-
 
     def Eliminar_Ordenado(self, elemento):
         if elemento in self.A:
@@ -43,25 +42,3 @@ class Arreglo:
             self.Insertar_Ordenado(valor_a_reemplazar)
         else:
             print(f"Elemento no encontrado")
-    
-
-mi_arreglo = Arreglo()
-
-mi_arreglo.Insertar_Ordenado(3)
-mi_arreglo.Insertar_Ordenado(1)
-mi_arreglo.Insertar_Ordenado(2)
-
-mi_arreglo.mostrar()
-mi_arreglo.Insertar_Ordenado(4)
-mi_arreglo.Insertar_Ordenado(1)
-
-mi_arreglo.mostrar()
-
-
-mi_arreglo.modificar(2, 4)
-mi_arreglo.mostrar()
-mi_arreglo.Eliminar_Ordenado(3)
-mi_arreglo.mostrar()
-
-
-
