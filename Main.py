@@ -1,4 +1,4 @@
-from arreglo import Arreglo  # Importa la clase Arreglo desde el archivo arreglo.py
+from Arreglo import Arreglo  # Importa la clase Arreglo desde el archivo arreglo.py
 
 class Main:
     def __init__(self):
