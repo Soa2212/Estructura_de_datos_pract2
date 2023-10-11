@@ -4,6 +4,9 @@ class Arreglo:
         self.A = [None] * self.Max
         self.N = -1
 
+    def Borrar_Arreglo(self):
+        self.N = -1
+
     def Buscar_Ordenado(self, elemento):
         self.N += 1
         index = self.N
