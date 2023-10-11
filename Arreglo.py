@@ -3,34 +3,33 @@ class Arreglo:
         self.Max = 20
         self.A = [None] * self.Max
         self.N = -1
+        self.uppercase = []  # Lista para letras mayúsculas
+        self.lowercase = []  # Lista para letras minúsculas
 
     def Borrar_Arreglo(self):
         self.N = -1
-
-    def Buscar_Ordenado(self, elemento):
-        self.N += 1
-        index = self.N
-        while index > 0 and elemento.lower() < self.A[index - 1].lower(): 
-            self.A[index] = self.A[index - 1]
-            index -= 1
-        self.A[index] = elemento
+        self.uppercase = []  # Limpiar la lista de mayúsculas
+        self.lowercase = []  # Limpiar la lista de minúsculas
 
     def Insertar_Ordenado(self, elemento):
         if self.N == self.Max - 1:
             print("El arreglo está lleno")
         else:
-            self.Buscar_Ordenado(elemento)
+            # Clasificar el elemento en mayúsculas o minúsculas
+            if elemento.isupper():
+                self.uppercase.append(elemento)
+            else:
+                self.lowercase.append(elemento)
 
-    def Eliminar_Ordenado(self, elemento):
-        if elemento in self.A:
-            while elemento in self.A:
-                index = self.A.index(elemento)
-                for i in range(index, self.N):
-                    self.A[i] = self.A[i + 1]
-                self.A[self.N] = None
-                self.N -= 1
-        else:
-            print(f"Elemento no fue encontrado")
+            # Ordenar ambas listas
+            self.uppercase.sort()
+            self.lowercase.sort()
+
+            # Combinar las listas ordenadas en el arreglo principal
+            self.A[:len(self.uppercase)] = self.uppercase
+            self.A[len(self.uppercase):len(self.uppercase) + len(self.lowercase)] = self.lowercase
+
+            self.N = len(self.uppercase) + len(self.lowercase) - 1  # Actualizar la posición N
 
     def mostrar(self):
         elementos = []
