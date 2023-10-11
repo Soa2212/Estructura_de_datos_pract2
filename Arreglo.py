@@ -28,7 +28,9 @@ class Arreglo:
                 for i in range(index, self.N):
                     self.A[i] = self.A[i + 1]
                 self.A[self.N] = None
+                print(f"Se ha eliminado la localidad {str(self.N)} que contiene el elemento: {(elemento)}")
                 self.N -= 1
+            
         else:
             print(f"Elemento no fue encontrado")
 
